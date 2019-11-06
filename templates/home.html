@@ -1,0 +1,32 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/home.css">
+
+<div id = "schoolname">
+  <h2>{{ name }}</h2>
+  <h3>{{ city }}, {{ state }}</h3>
+</div>
+<div id = "couldyoumakeitin">
+
+  <h3>{{ combinedsat }} SAT vs {{ combinedyoursat }} SAT</h3>
+  <h3>{{ theiract }} SAT vs {{ youract }} SAT</h3>
+  <div id = "theirsatscores">
+    <strong>Their</strong><p1> ACT: {{ theiract }}</p1><br><br>
+    <strong>Their</strong><p1> SAT scores</p1><br><br>
+    <p1>SAT Critical Reading: {{ criticalreading }}</p1><br><br>
+    <p1>SAT Math: {{ mathsat  }}</p1><br><br>
+  </div>
+  <div id = "yoursatscores">
+    <strong>Your</strong><p1> ACT: {{ youract }}</p1><br><br>
+    <strong>Your</strong><p1> SAT scores</p1><br><br>
+    <p1>SAT Critical Reading: {{ userreading }}</p1><br><br>
+    <p1>SAT Math: {{ usermath }}</p1><br><br>
+  </div>
+  <p1>Admission Rate: {{ admissionrate }}%</p1><br><br>
+ </div>
+<div id = "schoolinfo">
+  <p1 style="font-size: 1.5rem;">School Info</p1><br><br>
+  <p1 style="font-size: 1.15rem;">Population: {{ studentsize }} Undergraduates</p1><br><br>
+  <p1 style="font-size: 1.15rem;">Average tuition cost: ${{ tuition }}</p1><br><br>
+  <p1 style="font-size: 1.15rem;">Graduation rate: {{ graduationrate }} %</p1><br><br>
+</div>

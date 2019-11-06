@@ -1,0 +1,29 @@
+#schoolname {
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+#schoolinfo {
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+#couldyoumakeitin{ 
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  clear:both;
+  text-align:center;
+}
+h1 {
+  text-align: center;
+}
+#theirsatscores {
+  width: 50%;
+  float:left;
+  text-align:center;
+}
+#yoursatscores {
+  width: 50%;
+  float: right;
+  text-align:center;
+}
