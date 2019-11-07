@@ -25,7 +25,7 @@ SECRET_KEY = '!(c_3e3le5lzz$1-e4_^qggw8=niv2)%f^d=6euo@%vylob^e#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mitappinventorproject.herokuapp.com/']
 
 
 # Application definition
