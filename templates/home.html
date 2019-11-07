@@ -7,8 +7,8 @@
   <h3>{{ city }}, {{ state }}</h3>
 </div>
 <div id = "couldyoumakeitin">
-
-  <h3>{{ combinedsat }} SAT vs {{ combinedyoursat }} SAT</h3>
+{% if schoolfound %}
+    <h3>{{ combinedsat }} SAT vs {{ combinedyoursat }} SAT</h3>
   <h3>{{ theiract }} SAT vs {{ youract }} SAT</h3>
   <div id = "theirsatscores">
     <strong>Their</strong><p1> ACT: {{ theiract }}</p1><br><br>
@@ -30,3 +30,7 @@
   <p1 style="font-size: 1.15rem;">Average tuition cost: ${{ tuition }}</p1><br><br>
   <p1 style="font-size: 1.15rem;">Graduation rate: {{ graduationrate }} %</p1><br><br>
 </div>
+{% endif %}
+    {% if not schoolfound %}
+    <h2>No Schools Found!</h2>
+    {% endif %}
