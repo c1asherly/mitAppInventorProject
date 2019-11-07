@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(c_3e3le5lzz$1-e4_^qggw8=niv2)%f^d=6euo@%vylob^e#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://mitappinventorproject.herokuapp.com/']
 
