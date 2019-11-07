@@ -15,10 +15,12 @@ def home(request):
         youract = request.GET.get('act')
         schoolname = schoolname.replace(" ", "+")
         completedurl = "https://api.data.gov/ed/collegescorecard/v1/schools.json?school.name=" + schoolname + "&school.state=" + schoolstate + fields + api_key
-
         print(completedurl)
         response = urllib.request.urlopen(completedurl)
         parsedjson = json.loads(response.read().decode())
+        print(parsedjson['metadata']['total'])
+        if(parsedjson['metadata']['total'] == 0):
+            return render_to_response(template_name="home.html", context={"schoolfound": False})
         criticalreading = parsedjson['results'][0]['latest.admissions.sat_scores.midpoint.critical_reading']
         math = parsedjson['results'][0]['latest.admissions.sat_scores.midpoint.math']
         combinedtheirsat = int(criticalreading) + int(math)
@@ -31,7 +33,7 @@ def home(request):
         admissionrate = parsedjson['results'][0]['latest.admissions.admission_rate.overall']*100
         theiract = parsedjson['results'][0]['latest.admissions.act_scores.midpoint.cumulative']
         return render_to_response(template_name="home.html", context={
-            "mathsat": math, "state": schoolstate, "criticalreading": criticalreading, "usermath": usermath, "userreading": userreading, "combinedsat": combinedtheirsat, "combinedyoursat": combinedyoursat,
+            "schoolfound": True, "mathsat": math, "state": schoolstate, "criticalreading": criticalreading, "usermath": usermath, "userreading": userreading, "combinedsat": combinedtheirsat, "combinedyoursat": combinedyoursat,
             "studentsize": population, "city": schoolcity, "name": schoolnamerefiner, "tuition": tuition, "graduationrate": graduationrate, "admissionrate": admissionrate, "theiract": theiract, "youract": youract
         })
     else:
