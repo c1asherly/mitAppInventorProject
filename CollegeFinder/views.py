@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 import json
 import urllib.request
 import urllib.parse as urlparse
-api_key = "&api_key=wuH4hRXxyQgUVH9NBEPbd4RARpKyMMIg7wXq9dC5"
+api_key = ""
 
 fields = """&_fields=id,school.name,latest.admissions.act_scores.midpoint.cumulative,latest.admissions.admission_rate.overall,latest.completion.completion_rate_4yr_150nt,school.city,latest.cost.tuition.in_state,latest.student.size,latest.admissions.sat_scores.midpoint.math,latest.admissions.sat_scores.midpoint.critical_reading,latest.admissions.admission_rate.overall,latest.admissions.sat_scores.average.overall,latest.student.enrollment.all"""
 
